@@ -1,0 +1,26 @@
+"Liquidacion 1","/NOMBRE_VARIABLE/ una vez liquidando el día  /FECHA_PAGO/ por $/ADEUDO_VARIABLE/ con la referencia OXXO /REF_OXXO/ o CLABE SPEI /REF_SPEI/ Concepto tu número de préstamo /CREDITO_VARIABLE/ y beneficiario VIVUS, estará disponible el incremento del préstamo que podrás consultar en el momento inmediato en que liquides. 
+Si  pagas hoy son $/SALDO_VARIABLE/ con las mismas referencias (Hoy mismo tendras el incremento).",""
+"Liquidacion 2","/NOMBRE_VARIABLE/ Esta es la cantidad con la que liquida $/ADEUDO_VARIABLE/ EL DIA /FECHA_PAGO/ *OXXO* /REF_OXXO/ *TRANSFERENCIA* /REF_SPEI/ Beneficiario: INTEGRATED MANAGEMENT SERVICES Concepto: /CREDITO_VARIABLE/ banco: STP Recuerde que es importante que su pago se realice en una sola exhibición. *PROMOCION* Liquida tu préstamo hoy con: $/SALDO_VARIABLE/ ¡¡¡ESTA PROMOCIÓN DE DESCUENTO SOLO APLICA EL DíA DE HOY!!! (*debes de hacerlo en un solo pago*) Y renueva tu crédito hasta por *$8,000.00**","Agente"
+"Liquidacion 4","Fecha de pago: /FECHA_PAGO/ Monto $/ADEUDO_VARIABLE/ SPEI: /REF_SPEI/ OXXO pay: /REF_OXXO/  *SI HOY LIQUIDAS PAGAS * $/SALDO_VARIABLE/  Contrato:/CREDITO_VARIABLE/","Agente"
+"Liquidacion 5","Hola! solo el día de hoy liquidas tu contrato  /CREDITO_VARIABLE/ con $/ADEUDO_VARIABLE/  paga con tus referencias:  *OXXO:* /REF_OXXO/ *SPEI:* /REF_SPEI/   ¿tienes alguna duda?","Agente"
+"Liquidacion 6","/NOMBRE_VARIABLE/ tu pago para liquidar el día /FECHA_PAGO/ es por: $/ADEUDO_VARIABLE/ *APROVECHA ESTA PROMOCIÓN* Y LIQUIDA HOY CON $/SALDO_VARIABLE/   Referencia SPEI: /REF_SPEI/ Beneficiario: VIVUS Concepto: /CREDITO_VARIABLE/  Recuerda que es importante que tu pago lo realices en una sola exhibiciún","Agente"
+"Liquidacion 7","/NOMBRE_VARIABLE/ tu *Monto* para liquidar es: $/ADEUDO_VARIABLE/  OXXO PAY: /REF_OXXO/  SPEI: /REF_SPEI/   *Una vez realizado su pago puedes enviar tu comprobante HOY por favor* Contrato /CREDITO_VARIABLE/","Agente"
+"Liquidacion 8","/NOMBRE_VARIABLE/ liquida el día /FECHA_PAGO/ con: $/ADEUDO_VARIABLE/ o LIQUIDA HOY con:  $/SALDO_VARIABLE/ y realiza tu renovación *HOY MISMO*   Referencia SPEI: /REF_SPEI/ Beneficiario: VIVUS Concepto: /CREDITO_VARIABLE/  Realiza tu pago en una sola exhibición ¿Tienes más dudas? Escribe aquí ",""
+"EXTENCION 20","/NOMBRE_VARIABLE/ Paga tu extensión de 20 días con las siguientes referencias: SPEI Ingresa al portal de banca electronica de tu banco Selecciona la opción Transferencia o Pagos Ingresa tu cuenta CLABE para pago /REF_SPEI/ Ingresa el monto $/EXT_20/ Confirma el pago y ¡Listo! Instrucciones de pago OXXO Solo debes presentar este número  en cualquier tienda OXXO, /REF_OXXO/ pagar en efectivo $/EXT_20/ e indicar que lo harás a través de la modalidad OXXO PAY.","Agente"
+"EXTENCION 30","/NOMBRE_VARIABLE/ Paga tu extensión de 30 días con las siguientes referencias: SPEI Ingresa al portal de banca electronica de tu banco Selecciona la opción Transferencia o Pagos Ingresa tu cuenta CLABE para pago /REF_SPEI/ Ingresa el monto $/EXT_30/ Confirma el pago y ¡Listo! Instrucciones de pago OXXO Solo debes presentar este número  en cualquier tienda OXXO, /REF_OXXO/ pagar en efectivo $/EXT_30/ e indicar que lo harás a través de la modalidad OXXO PAY.","Agente"
+"REFERENCIAS","/NOMBRE_VARIABLE/ Estas son las referencias para que puedas realizar tu pago, en SPEI /REF_SPEI/ es como hacer una transferencia  o si lo prefieres en OXXO la referencia es 
+
+/REF_OXXO/ recuerda indicar modalidad OXXO PAY",""
+"agregado","¡Hola! /NOMBRE_VARIABLE/ disculpa la interrupción, estoy haciendo una breve encuesta para saber donde pagaras tu Crédito: /CREDITO_VARIABLE/ tu respuesta nos ayuda a mejorar  VIVUS MEXICO",""
+"prueba ","GUSTAVO una vez liquidando el día  21/03/2024 por $24,100 con la referencia OXXO 84003586817713 o CLABE SPEI 646180123202401121 Concepto tu número de préstamo 3004636583 y beneficiario VIVUS, estará disponible el incremento del préstamo que podrás consultar en el momento inmediato en que liquides. Si  pagas hoy son $21,501 con las mismas referencias (Hoy mismo tendrías el incremento).
+
+Liquida tu préstamo hoy con: $21,501 ¡¡¡ESTA PROMOCIÓN DE DESCUENTO SOLO APLICA EL DÍA DE HOY!!! (*debes de hacerlo en un solo pago*) 
+Y renueva tu crédito hasta por *$8,000.00* 🤑*
+ 😉  👋🏼😃 ¿ 👉🏻
+👋🏼😃
+ /NOMBRE_VARIABLE/ ",""
+"prueba maximaaaa"," /NOMBRE_VARIABLE/  $/SALDO_VARIABLE/  /FECHA_PAGO/  $/EXT_20/  /CREDITO_VARIABLE/  $/ADEUDO_VARIABLE/  /REF_SPEI/  /REF_OXXO/  $/EXT_30/ 
+wenas !""#$%&/()=?¡¨´+}*}[;,.-_-----:.;<>¿¿¡|°¬|°
+🤑*
+ 😉  👋🏼😃 ¿ 👉🏻
+👋🏼😃",
