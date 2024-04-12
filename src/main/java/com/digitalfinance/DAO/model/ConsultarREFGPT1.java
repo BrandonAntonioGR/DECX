@@ -24,8 +24,8 @@ public class ConsultarREFGPT1 {
                 " ,ll.correo  \n" +
                 " ,r.DPD  \n" +
                 " ,r.client_full_name  \n" +
-                " ,r.open_principal, \n" +
-                " r.NOMBRE  \n" +
+                " ,r.open_principal \n" +
+                " ,r.NOMBRE  \n" +
                 " ,r.SPEI_CLABE  \n" +
                 " ,r.OXXOReference  \n" +
                 " ,CEILING(r.EXTENSION_20)  AS EXTENSION_20\n" +

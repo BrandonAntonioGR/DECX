@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 
 public class InsertaCargaMsgWhatsApp {
-     public static boolean RegistrarUsuario(String CreateDate, String Contrato,
+    public static boolean RegistrarUsuario(String CreateDate, String Contrato,
              String Agente, String Enviado){
         PreparedStatement ps;
         boolean retorno = false;

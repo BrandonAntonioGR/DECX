@@ -93,9 +93,9 @@ public class ConsultarPlantilas {
     public static String obtenerDirectorioActual() {
         String directorioActual = System.getProperty("user.dir");
         //Descomentar cuando se este dentro de netbeans
-//        String rutaCsv=directorioActual+"\\src\\main\\java\\com\\digitalfinance\\DAO\\model\\MisPlantillas.csv";
+        String rutaCsv=directorioActual+"\\src\\main\\java\\com\\digitalfinance\\DAO\\model\\MisPlantillas.csv";
         //Descomentar cunado se despliegue la apk
-        String rutaCsv=directorioActual+"\\MisPlantillas.csv";
+//        String rutaCsv=directorioActual+"\\MisPlantillas.csv";
         return rutaCsv;
     }
 }

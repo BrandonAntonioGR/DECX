@@ -618,6 +618,7 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
         btnCargaCccOne = new javax.swing.JButton();
         btnCopiarPlantilla = new javax.swing.JButton();
         btnWhatsapp = new javax.swing.JButton();
+        btnGeneraPromesa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1547,14 +1548,14 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
                 btnHipervinculoTecActionPerformed(evt);
             }
         });
-        jPanel17.add(btnHipervinculoTec, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 50, 50));
+        jPanel17.add(btnHipervinculoTec, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 50, 50));
 
         btnCargaCccOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargaCccOneActionPerformed(evt);
             }
         });
-        jPanel17.add(btnCargaCccOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 50, 50));
+        jPanel17.add(btnCargaCccOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 50, 50));
 
         btnCopiarPlantilla.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         btnCopiarPlantilla.addActionListener(new java.awt.event.ActionListener() {
@@ -1562,14 +1563,21 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
                 btnCopiarPlantillaActionPerformed(evt);
             }
         });
-        jPanel17.add(btnCopiarPlantilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 50, 50));
+        jPanel17.add(btnCopiarPlantilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 50, 50));
 
         btnWhatsapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnWhatsappActionPerformed(evt);
             }
         });
-        jPanel17.add(btnWhatsapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 50, 50));
+        jPanel17.add(btnWhatsapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 50, 50));
+
+        btnGeneraPromesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGeneraPromesaActionPerformed(evt);
+            }
+        });
+        jPanel17.add(btnGeneraPromesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 50, 50));
 
         getContentPane().add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 0, 70, 450));
 
@@ -2248,6 +2256,11 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
     private void btnAscendente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAscendente1ActionPerformed
         cargaDatosWhatsapp(agente);
     }//GEN-LAST:event_btnAscendente1ActionPerformed
+
+    private void btnGeneraPromesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeneraPromesaActionPerformed
+        cp.agregaPromesaPago(agente);
+        //this.dispose();
+    }//GEN-LAST:event_btnGeneraPromesaActionPerformed
 //    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 //        // Obtener el modelo de la tabla
 //        DefaultTableModel model = (DefaultTableModel) tblMacro.getModel();
@@ -2283,6 +2296,7 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
     private javax.swing.JButton btnDescendente;
     private javax.swing.JButton btnDescendenteCargados1;
     private javax.swing.JButton btnExcel;
+    private javax.swing.JButton btnGeneraPromesa;
     private javax.swing.JButton btnHipervinculoTec;
     private javax.swing.JButton btnLimpiaContrato;
     private javax.swing.JButton btnLimpiaExt;
