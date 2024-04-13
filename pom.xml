@@ -13,17 +13,20 @@
         </repository>
     </repositories>
     <dependencies>
-            <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>12.6.1.jre11</version>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.netbeans.external/AbsoluteLayout -->
         <dependency>
-            <groupId>unknown.binary</groupId>
+            <groupId>org.netbeans.external</groupId>
             <artifactId>AbsoluteLayout</artifactId>
-            <version>SNAPSHOT</version>
+            <version>RELEASE210</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
         <dependency>
             <groupId>com.opencsv</groupId>
@@ -43,15 +46,15 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.mashape.unirest/unirest-java -->
         <dependency>
-        <groupId>com.mashape.unirest</groupId>
-        <artifactId>unirest-java</artifactId>
-        <version>1.4.9</version>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>1.4.9</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.sap.cloud.security/java-security -->
         <dependency>
-        <groupId>com.sap.cloud.security</groupId>
-        <artifactId>java-security</artifactId>
-        <version>3.3.5</version>
+            <groupId>com.sap.cloud.security</groupId>
+            <artifactId>java-security</artifactId>
+            <version>3.3.5</version>
         </dependency>
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
@@ -84,6 +87,17 @@
             <artifactId>log4j-core</artifactId>
             <version>2.14.1</version> 
         </dependency>
+        <dependency>
+            <groupId>com.toedter</groupId>
+            <artifactId>jcalendar</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.toedter/jcalendar -->
+        <dependency>
+            <groupId>com.toedter</groupId>
+            <artifactId>jcalendar</artifactId>
+            <version>1.4</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -92,8 +106,8 @@
         <exec.mainClass>com.digitalfinance.plantilla.Plantilla</exec.mainClass>
     </properties>
     <!-- Aqui empieza el codigo que añadi -->
-   <build>
-       <resources>
+    <build>
+        <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>false</filtering>
@@ -122,6 +136,8 @@
             </plugin>    
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <!-- Aqui empieza el codigo que añadi -->
+                
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.6.0</version>
                 <configuration>            
