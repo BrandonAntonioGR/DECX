@@ -7,45 +7,47 @@ package com.digitalfinance.DAO.entity;
 import java.sql.Date;
 
 public class PromesaPago {
-    private String contrato;
+    private String contract;
     private String dpd;
-    private String algoritmo;
+    private String Algorithm;
     private String contactDate;
     private String promiseDate;
     private String promiseLimitDate;
     private double promiseAmount;
     private String agente;
+    private String contact;
+    private String contactChannel;
+    private String channel;
     private String promiseType;
-    private String canal;
-    private String contacto;
-    private String medioContacto;
+    private String amountType;
     private String comentarios;
 
     public PromesaPago() {
     }
 
-    public PromesaPago(String contrato, String dpd, String algoritmo, String contactDate, String promiseDate, String promiseLimitDate, double promiseAmount, String agente, String promiseType, String canal, String contacto, String medioContacto, String comentarios) {
-        this.contrato = contrato;
+    public PromesaPago(String contract, String dpd, String Algorithm, String contactDate, String promiseDate, String promiseLimitDate, double promiseAmount, String agente, String contact, String contactChannel, String channel, String promiseType, String amountType, String comentarios) {
+        this.contract = contract;
         this.dpd = dpd;
-        this.algoritmo = algoritmo;
+        this.Algorithm = Algorithm;
         this.contactDate = contactDate;
         this.promiseDate = promiseDate;
         this.promiseLimitDate = promiseLimitDate;
         this.promiseAmount = promiseAmount;
         this.agente = agente;
+        this.contact = contact;
+        this.contactChannel = contactChannel;
+        this.channel = channel;
         this.promiseType = promiseType;
-        this.canal = canal;
-        this.contacto = contacto;
-        this.medioContacto = medioContacto;
+        this.amountType = amountType;
         this.comentarios = comentarios;
     }
 
-    public String getContrato() {
-        return contrato;
+    public String getContract() {
+        return contract;
     }
 
-    public void setContrato(String contrato) {
-        this.contrato = contrato;
+    public void setContract(String contract) {
+        this.contract = contract;
     }
 
     public String getDpd() {
@@ -56,12 +58,12 @@ public class PromesaPago {
         this.dpd = dpd;
     }
 
-    public String getAlgoritmo() {
-        return algoritmo;
+    public String getAlgorithm() {
+        return Algorithm;
     }
 
-    public void setAlgoritmo(String algoritmo) {
-        this.algoritmo = algoritmo;
+    public void setAlgorithm(String Algorithm) {
+        this.Algorithm = Algorithm;
     }
 
     public String getContactDate() {
@@ -104,6 +106,30 @@ public class PromesaPago {
         this.agente = agente;
     }
 
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getContactChannel() {
+        return contactChannel;
+    }
+
+    public void setContactChannel(String contactChannel) {
+        this.contactChannel = contactChannel;
+    }
+
+    public String getChannel() {
+        return channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
     public String getPromiseType() {
         return promiseType;
     }
@@ -112,28 +138,12 @@ public class PromesaPago {
         this.promiseType = promiseType;
     }
 
-    public String getCanal() {
-        return canal;
+    public String getAmountType() {
+        return amountType;
     }
 
-    public void setCanal(String canal) {
-        this.canal = canal;
-    }
-
-    public String getContacto() {
-        return contacto;
-    }
-
-    public void setContacto(String contacto) {
-        this.contacto = contacto;
-    }
-
-    public String getMedioContacto() {
-        return medioContacto;
-    }
-
-    public void setMedioContacto(String medioContacto) {
-        this.medioContacto = medioContacto;
+    public void setAmountType(String amountType) {
+        this.amountType = amountType;
     }
 
     public String getComentarios() {
@@ -144,5 +154,4 @@ public class PromesaPago {
         this.comentarios = comentarios;
     }
 
-    
 }

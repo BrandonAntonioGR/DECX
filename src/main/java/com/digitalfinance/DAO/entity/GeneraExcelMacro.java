@@ -23,7 +23,7 @@ public class GeneraExcelMacro {
 
             // Escribir encabezados
             Row headerRow = sheet.createRow(0);
-            String[] headers = {"AGENTE", "TELEFONO", "CONTRATO","DPD","ADEUDO","NOMBRE","CORREO","SPEI","OXXO","ALGORITMO","WHATSAPP","MITROL"};
+            String[] headers = {"AGENTE", "TELEFONO", "CONTRATO","DPD","ADEUDO","NOMBRE","CORREO","SPEI","OXXO","ALGORITMO","TIPO CLIENTE","WHATSAPP","MITROL"};
             for (int i = 0; i < headers.length; i++) {
                 Cell cell = headerRow.createCell(i);
                 cell.setCellValue(headers[i]);
@@ -44,6 +44,7 @@ public class GeneraExcelMacro {
                 row.createCell(8).setCellValue(listaMacro.getOxxoReference());
                 row.createCell(9).setCellValue(listaMacro.getAlgoritmo());
                 row.createCell(10).setCellValue(listaMacro.getEnviado());
+                row.createCell(10).setCellValue(listaMacro.getTipoCte());
                 row.createCell(11).setCellValue(listaMacro.getConteoMit());                
             }
 
@@ -52,7 +53,7 @@ public class GeneraExcelMacro {
                 workbook.write(outputStream);
                 JOptionPane.showMessageDialog(null, "Archivo Excel creado correctamente.", "Informacion", JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, "No se agregaron los datos al archivo excel, posiblemente tengas el archivo datos_macro.xlsx abierto."+e, "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Error: "+e, "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (IOException e) {
             e.printStackTrace();

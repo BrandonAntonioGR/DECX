@@ -121,11 +121,13 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
         ImageIcon iconTec = new ImageIcon(getClass().getResource("/LogoTEC.png"));
         ImageIcon iconWhatsapp = new ImageIcon(getClass().getResource("/LogoWhatsApp.png"));
         ImageIcon iconCopiar = new ImageIcon(getClass().getResource("/LogoCopiar.png"));
+        ImageIcon iconPromesaPago = new ImageIcon(getClass().getResource("/promesaPago.png"));
         //ImageIcon iconvivus = new ImageIcon(getClass().getResource("/LogoVivus.png"));
         btnCargaCccOne.setIcon(iconCCCone);
         btnHipervinculoTec.setIcon(iconTec);
         btnWhatsapp.setIcon(iconWhatsapp);
         btnCopiarPlantilla.setIcon(iconCopiar);
+        btnGeneraPromesa.setIcon(iconPromesaPago);
 
         this.agente = agnt;
         btnCargaCccOne.setEnabled(false);
@@ -822,14 +824,14 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnCopiarCorreo2)
-                            .addComponent(cmbOpcCopiar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbOpcCopiar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCargarCCCone)
-                            .addComponent(btnCopiarCorreo1)))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCopiarCorreo1)
+                            .addComponent(btnCargarCCCone)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1328,7 +1330,7 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtMoratorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Calcular costo moratorio", jPanel4);
@@ -1533,7 +1535,7 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
                         .addGap(9, 9, 9)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblcontrato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))))
+                            .addComponent(lblTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
         );

@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Brandon Garduño
@@ -38,7 +39,8 @@ public class ConsultaCreaPromesaPago {
                 " LEFT JOIN DC_HIS_ASIG AS a  \n" +
                 " ON  a.CONTRATO=r.number  \n" +
                 " where r.number='"+contrato+"'\n" +
-                " AND a.[CONTRATO] NOT IN (SELECT  [ContractNumber] FROM [DC REPORT].[dbo].[PaymentPromises]  WHERE CONVERT(DATE,GETDATE()) between CONVERT(DATE,[ContactDate]) and CONVERT(DATE,[PromiseLimitDate])\n" +
+                "AND a.[CONTRATO] NOT IN (\n" +
+                "SELECT  [ContractNumber] FROM [DC REPORT].[dbo].[PaymentPromises]  WHERE CONVERT(DATE,GETDATE()) between CONVERT(DATE,[ContactDate]) and CONVERT(DATE,[PromiseLimitDate])\n" +
                 "UNION\n" +
                 "SELECT [Contrato] FROM [DC REPORT].[dbo].[CurrentDatePayment]\n" +
                 "UNION\n" +
@@ -46,7 +48,7 @@ public class ConsultaCreaPromesaPago {
                 "UNION\n" +
                 "SELECT [loan_id] FROM [DC REPORT].[dbo].[MR_Payments] WHERE CONVERT(DATE,[booking_date]) BETWEEN CONVERT(DATE,DATEADD(DAY, -5, GETDATE())) AND CONVERT(DATE,GETDATE())\n" +
                 "UNION\n" +
-                "SELECT [contrato] FROM [DC_PromesasPagoJava] WHERE CONVERT(DATE,GETDATE()) between CONVERT(DATE,[contactDate]) and CONVERT(DATE,[promiseLimitDate])\n" +
+                "SELECT [contract] FROM [DC_PromesasPagoJava] WHERE CONVERT(DATE,GETDATE()) between CONVERT(DATE,[contactDate]) and CONVERT(DATE,[promiseLimitDate])\n" +
                 ")");
             ResultSet rs=ps.executeQuery();
             Macro macro=new Macro();
@@ -64,9 +66,11 @@ public class ConsultaCreaPromesaPago {
                 macro.setSpeiClave(rs.getString("SPEI"));
                 macro.setOxxoReference(rs.getString("OXXO"));
             }
+            JOptionPane.showMessageDialog(null, "Promesa disponible continue llenando el formulario", "Exito", JOptionPane.INFORMATION_MESSAGE);
             cerrarConexion(con, ps, rs);
             return macro;
         }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error en ConsultaCreaPromesasPago:"+e, "Error", JOptionPane.ERROR_MESSAGE);
             return null;
         }        
     }

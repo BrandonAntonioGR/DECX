@@ -19,23 +19,26 @@ public class InsertaPromesaPago {
         try {
             con = ModelConection.getConnection();
             ps=con.prepareStatement("INSERT INTO [DC_PromesasPagoJava] "
-                    + "([contrato],[dpd],[Algoritmo],[contactDate],"
+                    + "([contract],[dpd],[Algorithm],[contactDate],"
                     + "[promiseDate],[promiseLimitDate],[promiseAmount],"
-                    + "[agente],[promiseType],[canal],[contacto],[medioContacto],[comentarios])"
-                    + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            ps.setString(1, promesaPago.getContrato());
+                    + "[agent],[contact],[contactChannel],[channel],"
+                    + "[promiseType],[amountType],[comentarios])"
+                    + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            ps.setString(1, promesaPago.getContract());
             ps.setString(2, promesaPago.getDpd());
-            ps.setString(3, promesaPago.getAlgoritmo());
+            ps.setString(3, promesaPago.getAlgorithm());
             ps.setString(4, promesaPago.getContactDate());
             ps.setString(5, promesaPago.getPromiseDate());
             ps.setString(6, promesaPago.getPromiseLimitDate());
             ps.setDouble(7, promesaPago.getPromiseAmount());
             ps.setString(8, promesaPago.getAgente());
-            ps.setString(9, promesaPago.getPromiseType());
-            ps.setString(10, promesaPago.getCanal());
-            ps.setString(11, promesaPago.getContacto());
-            ps.setString(12, promesaPago.getMedioContacto());
-            ps.setString(13, promesaPago.getComentarios());
+            ps.setString(9, promesaPago.getContact());
+            ps.setString(10, promesaPago.getContactChannel());
+            ps.setString(11, promesaPago.getChannel());
+            ps.setString(12, promesaPago.getPromiseType());
+            ps.setString(13, promesaPago.getAmountType());
+            ps.setString(14, promesaPago.getComentarios());
+            
             retorno = Boolean.parseBoolean(Integer.toString(ps.executeUpdate()));
             con.close();
             ps.close();

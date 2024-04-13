@@ -14,8 +14,8 @@ import java.sql.SQLException;
 public class Plantilla {
     public static void main(String[] args) throws CsvException, IOException, SQLException {
         ControllerPantallas cp= new ControllerPantallas();        
-        cp.agregaPromesaPago("MARIANA");
+//        cp.agregaPromesaPago("MARIANA");
 //        cp.InicioSesion();
-//        cp.Macro("MARIANA");
+        cp.Macro("MARIANA");
     }
 }

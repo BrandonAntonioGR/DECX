@@ -55,12 +55,13 @@ public class crearexcelmasivo extends javax.swing.JFrame {
                 "      ,convert(int,dpd) as DPD\n" +
                 "      ,[Adeudo] AS ADEUDO\n" +
                 "      ,[NOMBRE] AS NOMBRE\n" +
-                "	  ,ll.correo AS CORRE0\n" +
+                "      ,ll.correo AS CORRE0\n" +
                 "      ,[SPEI_CLABE] AS SPEI\n" +
                 "      ,[OXXOReference] AS OXXO\n" +
                 "      ,CASE WHEN [ALGORITMO] = '' THEN 'D'ELSE [ALGORITMO] END AS ALGORITMO\n" +
-                "	  ,w.Enviado AS ENVIADO\n" +
-                "	  ,m.Conteo AS CONTEO\n" +
+                "	  ,a.Tipo_Cliente as TIPOCTE\n" +
+                "      ,w.Enviado AS ENVIADO\n" +
+                "      ,m.Conteo AS CONTEO\n" +
                 "FROM [DC REPORT].[dbo].[DC_HIS_ASIG] AS a\n" +
                 "  LEFT JOIN  [DC REPORT].[dbo].[dm_LLAVES] AS ll on ll.contract_id=a.CONTRATO\n" +
                 "  LEFT JOIN (SELECT w1.[Contrato],COUNT(w1.[Enviado]) AS Enviado FROM [DC REPORT].[dbo].[dm_PJavaMsgWhatsappp] as w1 GROUP BY w1.[Contrato]) AS w on w.[Contrato] = a.CONTRATO\n" +
@@ -116,7 +117,7 @@ public class crearexcelmasivo extends javax.swing.JFrame {
             cerrarConexion(con, ps, rs);
             
         } catch (Exception e) {
-            System.out.println("error: " + e);
+            JOptionPane.showMessageDialog(null, "Error:."+e, "Error", JOptionPane.ERROR_MESSAGE);
             
         } finally {
             try {
