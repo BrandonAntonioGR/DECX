@@ -122,12 +122,14 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
         ImageIcon iconWhatsapp = new ImageIcon(getClass().getResource("/LogoWhatsApp.png"));
         ImageIcon iconCopiar = new ImageIcon(getClass().getResource("/LogoCopiar.png"));
         ImageIcon iconPromesaPago = new ImageIcon(getClass().getResource("/promesaPago.png"));
+        ImageIcon iconPlanesPago = new ImageIcon(getClass().getResource("/PlanesPago.jpg"));
         //ImageIcon iconvivus = new ImageIcon(getClass().getResource("/LogoVivus.png"));
         btnCargaCccOne.setIcon(iconCCCone);
         btnHipervinculoTec.setIcon(iconTec);
         btnWhatsapp.setIcon(iconWhatsapp);
         btnCopiarPlantilla.setIcon(iconCopiar);
         btnGeneraPromesa.setIcon(iconPromesaPago);
+        btnPlanesPago.setIcon(iconPlanesPago);
 
         this.agente = agnt;
         btnCargaCccOne.setEnabled(false);
@@ -347,6 +349,7 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
         }
         this.tblMacro.setModel(modeloMacro);
         ArrayList<Macro> listaMacro = cm.consultaMacroDesc(agente, dpd, algoritmo);
+        System.out.println("lista size "+listaMacro.size());
         String lstMacro1 = listaMacro.size() + "";
         lstMacro.removeAll(lstMacro);
         lstMacro.addAll(listaMacro);
@@ -621,6 +624,7 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
         btnCopiarPlantilla = new javax.swing.JButton();
         btnWhatsapp = new javax.swing.JButton();
         btnGeneraPromesa = new javax.swing.JButton();
+        btnPlanesPago = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1550,14 +1554,14 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
                 btnHipervinculoTecActionPerformed(evt);
             }
         });
-        jPanel17.add(btnHipervinculoTec, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 50, 50));
+        jPanel17.add(btnHipervinculoTec, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 50, 50));
 
         btnCargaCccOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargaCccOneActionPerformed(evt);
             }
         });
-        jPanel17.add(btnCargaCccOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 50, 50));
+        jPanel17.add(btnCargaCccOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 50, 50));
 
         btnCopiarPlantilla.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         btnCopiarPlantilla.addActionListener(new java.awt.event.ActionListener() {
@@ -1565,21 +1569,30 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
                 btnCopiarPlantillaActionPerformed(evt);
             }
         });
-        jPanel17.add(btnCopiarPlantilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 50, 50));
+        jPanel17.add(btnCopiarPlantilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 50, 50));
 
         btnWhatsapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnWhatsappActionPerformed(evt);
             }
         });
-        jPanel17.add(btnWhatsapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 50, 50));
+        jPanel17.add(btnWhatsapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 50, 50));
 
+        btnGeneraPromesa.setEnabled(false);
         btnGeneraPromesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGeneraPromesaActionPerformed(evt);
             }
         });
-        jPanel17.add(btnGeneraPromesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 50, 50));
+        jPanel17.add(btnGeneraPromesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 50, 50));
+
+        btnPlanesPago.setEnabled(false);
+        btnPlanesPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlanesPagoActionPerformed(evt);
+            }
+        });
+        jPanel17.add(btnPlanesPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 50, 50));
 
         getContentPane().add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 0, 70, 450));
 
@@ -1858,7 +1871,6 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
                     JOptionPane.showMessageDialog(null, "Campo de contrato requerido", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 }
                 break;
-
         }
 
 
@@ -1895,9 +1907,9 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
             //se obtiene el costo multiplicando =dia *capital *0.0232
             double costo = capital * dia * 0.0232;
             //se formatea a dos decimales y se convierte a string
-            int costoInt = (int) Math.ceil(costo);
+            //int costoInt = (int) Math.ceil(costo);
             //se añade el valor a la caja de texto moratorios
-            txtMoratorios.setText(costoInt + "");
+            txtMoratorios.setText(costo + "");
         }
 
     }//GEN-LAST:event_btnCalcCostoMonetarioActionPerformed
@@ -2159,8 +2171,8 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
         String mensaje = txtArea.getText();
         try {
             String textoLimpiado = URLEncoder.encode(mensaje, "UTF-8");
-            String urlApiWhatsApp="https://api.whatsapp.com/send?phone=521"+telefono+"&text="+textoLimpiado;
-//            String urlApiWhatsApp = "whatsapp://send?phone=521" + telefono + "&text=" + textoLimpiado;
+//            String urlApiWhatsApp="https://api.whatsapp.com/send?phone=521"+telefono+"&text="+textoLimpiado;
+            String urlApiWhatsApp = "whatsapp://send?phone=521" + telefono + "&text=" + textoLimpiado;
             //System.out.println(urlApiWhatsApp);
             if (java.awt.Desktop.isDesktopSupported()) {
                 java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
@@ -2263,6 +2275,10 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
         cp.agregaPromesaPago(agente);
         //this.dispose();
     }//GEN-LAST:event_btnGeneraPromesaActionPerformed
+
+    private void btnPlanesPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanesPagoActionPerformed
+        cp.GeneraPlanesPago(agente);
+    }//GEN-LAST:event_btnPlanesPagoActionPerformed
 //    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 //        // Obtener el modelo de la tabla
 //        DefaultTableModel model = (DefaultTableModel) tblMacro.getModel();
@@ -2303,6 +2319,7 @@ public class ViewMacro extends javax.swing.JFrame implements ClipboardOwner {
     private javax.swing.JButton btnLimpiaContrato;
     private javax.swing.JButton btnLimpiaExt;
     private javax.swing.JButton btnLimpiaMoratorio;
+    private javax.swing.JButton btnPlanesPago;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnWhatsapp;
     private javax.swing.JComboBox<String> cmbAlgoritmo;

@@ -59,7 +59,7 @@ public class GeneraPromesa extends javax.swing.JFrame {
                 cmbCargarPlantilla.addItem(plantilla.getNombrePlantilla());
             }
         } catch (CsvValidationException ex) {
-            Logger.getLogger(ViewMacro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GeneraPromesa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -539,8 +539,9 @@ public class GeneraPromesa extends javax.swing.JFrame {
             contrato = macro.getNumber();
             nombre = macro.getNombre();
             algoritmo = macro.getAlgoritmo();
+            JOptionPane.showMessageDialog(null, "Promesa disponible continue llenando el formulario", "Exito", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "Contrato ya promesado", "Advertencia", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Contrato con promesa", "Advertencia", JOptionPane.ERROR_MESSAGE);
             contratoEncontrado = false;
         }
     }//GEN-LAST:event_btnBuscarContratoActionPerformed
@@ -626,7 +627,7 @@ public class GeneraPromesa extends javax.swing.JFrame {
                 }
 
             } catch (CsvValidationException ex) {
-                Logger.getLogger(ViewMacro.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(GeneraPromesa.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_cmbCargarPlantillaActionPerformed

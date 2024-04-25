@@ -8,10 +8,7 @@ package com.digitalfinance.view;
 import com.digitalfinance.DAO.entity.Plantilla;
 import com.digitalfinance.DAO.model.ConsultarPlantilas;
 import com.digitalfinance.controller.ControllerPantallas;
-import com.opencsv.exceptions.CsvValidationException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -270,14 +267,14 @@ public class AgregaPlantilla extends javax.swing.JFrame {
                 Plantilla pl= new Plantilla();
                 pl.setNombrePlantilla(txtNombrePlantilla.getText());
                 pl.setDescPlantilla(txtPlantilla.getText());
-                try {
-                    ArrayList<Plantilla> listaPlantilla=ConsultarPlantilas.leerCSV();
-                    listaPlantilla.add(pl);
-                    ConsultarPlantilas.agregarCSV(listaPlantilla);
-                } catch (CsvValidationException ex) {
-                    Logger.getLogger(AgregaPlantilla.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
+//                try {
+//                    ArrayList<Plantilla> listaPlantilla=ConsultarPlantilas.leerCSV();
+//                    listaPlantilla.add(pl);
+//                    ConsultarPlantilas.agregarCSV(listaPlantilla);
+//                } catch (CsvValidationException ex) {
+//                    Logger.getLogger(AgregaPlantilla.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//                
                 cp.AdministraPlantilla(agente);
                 this.dispose();
                 

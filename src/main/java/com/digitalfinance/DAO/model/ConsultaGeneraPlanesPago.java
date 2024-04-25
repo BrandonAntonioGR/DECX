@@ -10,46 +10,42 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-/**
- *
- * @author Brandon Garduño
- */
-public class ConsultaCreaPromesaPago {
-    public static Macro consultaCreaPromesa(String contrato){
+
+public class ConsultaGeneraPlanesPago {
+    public static Macro consultaGeneraPlanesPago(String contrato){
         Connection con;
         PreparedStatement ps;
         try{
             con=ModelConection.getConnection();
-            ps=con.prepareStatement("use [DC REPORT]\n" +
+            ps=con.prepareStatement("USE [DC REPORT]\n" +
                 "SELECT TOP 1\n" +
                 "a.Creation_Day\n" +
-                " ,r.DPD  AS DPD\n" +
-                " ,r.open_principal  AS OPENPRINCIPAL\n" +
-                " ,r.NOMBRE AS NOMBRE\n" +
-                " ,r.number AS CONTRATO \n" +
-                " ,r.Fecha_Pago  AS FECHAPAGO\n" +
-                " ,r.SPEI_CLABE  AS SPEI\n" +
-                " ,r.OXXOReference  AS OXXO\n" +
-                " ,CEILING(r.EXTENSION_20)  AS EXTENSION_20\n" +
-                " ,CEILING(r.EXTENSION_30)  AS EXTENSION_30\n" +
-                " ,CEILING(r.Saldo_hoy)  AS Saldo_hoy\n" +
-                " ,CEILING(r.Adeudo)  AS Adeudo\n" +
-                " ,a.ALGORITMO AS ALGORITMO\n" +
-                " FROM dm_REF_GPT1 AS r \n" +
-                " LEFT JOIN DC_HIS_ASIG AS a  \n" +
-                " ON  a.CONTRATO=r.number  \n" +
-                " where r.number='"+contrato+"'\n" +
-                "AND a.[CONTRATO] NOT IN (\n" +
-                "SELECT  [ContractNumber] FROM [DC REPORT].[dbo].[PaymentPromises]  WHERE CONVERT(DATE,GETDATE()) between CONVERT(DATE,[ContactDate]) and CONVERT(DATE,[PromiseLimitDate])\n" +
-                "UNION\n" +
+                ",r.DPD  AS DPD\n" +
+                ",r.open_principal  AS OPENPRINCIPAL\n" +
+                ",r.NOMBRE AS NOMBRE\n" +
+                ",r.number AS CONTRATO \n" +
+                ",r.Fecha_Pago  AS FECHAPAGO\n" +
+                ",r.SPEI_CLABE  AS SPEI\n" +
+                ",r.OXXOReference  AS OXXO\n" +
+                ",CEILING(r.EXTENSION_20)  AS EXTENSION_20\n" +
+                ",CEILING(r.EXTENSION_30)  AS EXTENSION_30\n" +
+                ",CEILING(r.Saldo_hoy)  AS Saldo_hoy\n" +
+                ",CEILING(r.Adeudo)  AS Adeudo\n" +
+                ",a.ALGORITMO AS ALGORITMO\n" +
+                "FROM dm_REF_GPT1 AS r \n" +
+                "LEFT JOIN DC_HIS_ASIG AS a  \n" +
+                "ON  a.CONTRATO=r.number  \n" +
+                "where r.number='"+contrato+"' AND\n" +
+                "a.[CONTRATO] NOT IN (\n" +
+//                "SELECT  [ContractNumber] FROM [DC REPORT].[dbo].[PaymentPromises]  WHERE CONVERT(DATE,GETDATE()) between CONVERT(DATE,[ContactDate]) and CONVERT(DATE,[PromiseLimitDate])\n" +
+//                "UNION\n" +
                 "SELECT [Contrato] FROM [DC REPORT].[dbo].[CurrentDatePayment]\n" +
-                "UNION\n" +
-                "SELECT [number] FROM [DC REPORT].[dbo].[dm_PJava]\n" +
                 "UNION\n" +
                 "SELECT [loan_id] FROM [DC REPORT].[dbo].[MR_Payments] WHERE CONVERT(DATE,[booking_date]) BETWEEN CONVERT(DATE,DATEADD(DAY, -5, GETDATE())) AND CONVERT(DATE,GETDATE())\n" +
                 "UNION\n" +
                 "SELECT [contract] FROM [DC_PromesasPagoJava] WHERE CONVERT(DATE,GETDATE()) between CONVERT(DATE,[contactDate]) and CONVERT(DATE,[promiseLimitDate])\n" +
-                ")");
+                ")\n" +
+                "AND r.DPD>0");
             ResultSet rs=ps.executeQuery();
             Macro macro=new Macro();
             while(rs.next()){

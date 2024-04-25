@@ -13,6 +13,7 @@ import com.digitalfinance.view.InicioSesion;
 import com.digitalfinance.view.ViewMacro;
 import com.digitalfinance.DAO.entity.Plantilla;
 import com.digitalfinance.view.GeneraPromesa;
+import com.digitalfinance.view.GeneraPlanesPago;
 import java.sql.SQLException;
 
 
@@ -61,6 +62,12 @@ public class ControllerPantallas {
     }
     public void agregaPromesaPago(String agente){
         GeneraPromesa gp= new GeneraPromesa(agente);
+        gp.setVisible(true);
+        gp.setLocationRelativeTo(null);
+        gp.setResizable(false);
+    }
+    public void GeneraPlanesPago(String agente){
+        GeneraPlanesPago gp= new GeneraPlanesPago(agente);
         gp.setVisible(true);
         gp.setLocationRelativeTo(null);
         gp.setResizable(false);
